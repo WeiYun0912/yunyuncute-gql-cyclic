@@ -19,6 +19,8 @@ connection.once("open", () => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  persistedQueries: false,
+  playground: true,
 });
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
